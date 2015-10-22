@@ -1,3 +1,3 @@
 <hello-world>
-  <h1>Hello, world!</h1>
+  <h1>Hello, { opts.user }!</h1>
 </hello-world>
