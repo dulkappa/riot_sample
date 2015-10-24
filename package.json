@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "browserify": "^11.2.0",
+    "gulp-jade": "^1.1.0",
+    "jade": "^1.11.0",
     "riot": "^2.2.4",
     "riotify": "^0.1.2",
     "vinyl-source-stream": "^1.1.0"

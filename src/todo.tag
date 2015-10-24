@@ -1,16 +1,13 @@
-<todo>
-  <form onSubmit={ add }>
-    <input type="text">
-    <input type="submit" value="Add">
-  </form>
+todo
+  form(onSubmit="{ add }")
+    input(type="text")
+    input(type="submit" value="Add")
 
-  <ul>
-    <li each={ item, i in list }>
-      { item }
-    </li>
-  </ul>
+  ul
+    li(each="{ item, i in list }")
+      | { item }
 
-  <script>
+  script.
     this.list = [];
 
     add(e) {
@@ -18,6 +15,3 @@
       this.list.push(input.value);
       input.value = '';
     }
-  </script>
-
-</todo>
