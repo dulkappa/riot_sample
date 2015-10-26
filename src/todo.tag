@@ -1,17 +1,32 @@
 todo
   form(onSubmit="{ add }")
-    input(type="text")
-    input(type="submit" value="Add")
+    input(name="input" onkeyup="{ edit }")
+    button(disabled="{ !text }") Add
 
   ul
-    li(each="{ item, i in list }")
-      | { item }
+    li(each="{   items }")
+      label(class="{ completed: done }")
+        input(type="checkbox" checked="{ done }" onClick="{ parent.toggle }")
+        | { title }
 
   script.
-    this.list = [];
+    this.disabled = true;
+
+    this.items = opts.items;
+
+    edit(e) {
+      this.text = e.target.value;
+    }
 
     add(e) {
-      var input = e.target[0];
-      this.list.push(input.value);
-      input.value = '';
+      if (this.text) {
+        this.items.push({ title: this.text });
+        this.text = this.input.value = '';
+      }
+    }
+    
+    toggle(e) {
+      var item = e.item;
+      item.done = !item.done;
+      return true;
     }
