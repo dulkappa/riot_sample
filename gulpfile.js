@@ -1,26 +1,26 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var riotify = require('riotify');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 var source = require('vinyl-source-stream');
 var webserver = require('gulp-webserver');
 
-gulp.task('jade', function() {
+gulp.task('pug', function() {
   gulp
-  .src('src/index.jade')
-  .pipe(jade())
+  .src('src/index.pug')
+  .pipe(pug())
   .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('browserify', function() {
   browserify({ entries: ['src/app.js'] })
-  .transform(riotify, { 'template': 'jade' })
+  .transform(riotify, { 'template': 'pug', 'ext': 'tag.pug' })
   .bundle()
   .pipe(source('main.js'))
   .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('server', ['browserify', 'jade'], function() {
+gulp.task('server', ['browserify', 'pug'], function() {
   gulp
   .src('dist')
   .pipe(webserver({
