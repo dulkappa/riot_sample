@@ -1,5 +1,8 @@
-Riot Sample
-===========
+# Riot Sample
+
+## About
+
+[![RiotJS Style Guide badge](https://cdn.rawgit.com/voorhoede/riotjs-style-guide/master/riotjs-style-guide.svg)](https://github.com/voorhoede/riotjs-style-guide)
 
 ## Development
 
@@ -21,15 +24,3 @@ To run example server, run
 ```
 gulp
 ```
-
-## やったこと
-
-1. [Riot](http://riotjs.com/)で`Hello world`(もちろん[gulp](http://gulpjs.com/)で).
-1. `opts`を使ってみる.
-1. [browserify](http://browserify.org/)([riotify](https://github.com/jhthorsen/riotify))で自動化.
-1. [Jade](http://jade-lang.com/)を使って書いてみる.
-
-## やりたいこと
-
-- 何かをインクリメンタルサーチ
-- 簡単なAPI実装

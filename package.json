@@ -1,7 +1,7 @@
 {
   "name": "riot_sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "learning RiotJS",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0"
