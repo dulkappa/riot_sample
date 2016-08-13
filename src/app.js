@@ -1,5 +1,5 @@
 var riot = require('riot');
 
-require('./todo.tag');
+require('./app-todo.tag');
 
-riot.mount('todo');
+riot.mount('app-todo');
