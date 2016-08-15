@@ -24,6 +24,8 @@ gulp.task('server', ['browserify', 'pug'], function() {
   gulp
   .src('dist')
   .pipe(webserver({
+    host: 'localhost',
+    port: '7000',
     livereload: true,
     directoryListining: true,
     open: true
