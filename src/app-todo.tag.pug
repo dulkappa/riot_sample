@@ -10,22 +10,26 @@ app-todo
         | { title }
 
   script.
-    this.disabled = true;
+    var tag = this;
+    tag.text = '';
+    tag.disabled = true;
+    tag.items = opts.items || [];
+    tag.add = add;
+    tag.edit = edit;
+    tag.toggle = toggle;
 
-    this.items = opts.items;
-
-    edit(e) {
-      this.text = e.target.value;
-    }
-
-    add(e) {
-      if (this.text) {
-        this.items.push({ title: this.text });
-        this.text = this.input.value = '';
+    function add () {
+      if (tag.text) {
+        tag.items.push({ title: tag.text });
+        tag.text = tag.input.value = '';
       }
     }
-    
-    toggle(e) {
+
+    function edit (e) {
+      tag.text = e.target.value;
+    }
+
+    function toggle (e) {
       var item = e.item;
       item.done = !item.done;
       return true;
