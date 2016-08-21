@@ -4,10 +4,15 @@ app-todo
     button(disabled="{ !text }") Add
 
   ul
-    li(each="{ items }")
+    li.itemList(each="{ items }")
       label(class="{ completed: done }")
         input(type="checkbox" checked="{ done }" onClick="{ parent.toggle }")
         | { title }
+
+  style.
+    .itemList {
+      list-style: none;
+    }
 
   script.
     var tag = this;
