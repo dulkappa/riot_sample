@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "browserify": "^11.2.0",
+    "gulp-concat": "^2.6.0",
     "gulp-pug": "^3.0.4",
     "gulp-webserver": "^0.9.1",
     "riot": "^2.5.0",

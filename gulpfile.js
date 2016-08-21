@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var riotify = require('riotify');
 var pug = require('gulp-pug');
+var concat = require('gulp-concat');
 var source = require('vinyl-source-stream');
 var webserver = require('gulp-webserver');
 
@@ -15,7 +16,8 @@ gulp.task('pug', function() {
 gulp.task('style', function() {
   gulp
   .src('src/**/*.css')
-  .pipe(gulp.dest('dist/style/'));
+  .pipe(concat('style.css'))
+  .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('browserify', function() {
