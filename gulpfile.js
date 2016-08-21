@@ -12,6 +12,12 @@ gulp.task('pug', function() {
   .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('style', function() {
+  gulp
+  .src('src/**/*.css')
+  .pipe(gulp.dest('dist/style/'));
+});
+
 gulp.task('browserify', function() {
   browserify({ entries: ['src/app.js'] })
   .transform(riotify, { 'template': 'pug', 'ext': 'tag.pug' })
@@ -20,7 +26,7 @@ gulp.task('browserify', function() {
   .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('server', ['browserify', 'pug'], function() {
+gulp.task('server', ['browserify', 'pug', 'style'], function() {
   gulp
   .src('dist')
   .pipe(webserver({
